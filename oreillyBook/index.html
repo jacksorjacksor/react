@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- Target container -->
+		<div id="root"></div>
+
+		<!-- React lib & ReactDOM -->
+		<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+		<!-- React code -->
+		<script>
+			const items = [
+				'2 lb salmon',
+				'5 sprigs fresh rosemary',
+				'2 tablespoons olive oil',
+				'2 small lemons',
+				'1 teaspoon kosher salt',
+				'4 cloves of chopped garlic',
+			];
+			const myItem = React.createElement('h1', null, 'HI!!!');
+			// Create Element
+			const myOtherItem = React.createElement(
+				'ul',
+				{ className: 'ingredients' },
+				items.map((ingredient, i) =>
+					React.createElement('li', { key: i }, ingredient)
+				)
+			);
+
+			// Render to ReactDOM
+			ReactDOM.render(
+				[myItem, myOtherItem],
+				document.getElementById('root')
+			);
+		</script>
+	</body>
+</html>
